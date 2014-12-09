@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboard/dashboard'
+
+  root 'welcome#index'
+
   resources :authors
 
   resources :tips
