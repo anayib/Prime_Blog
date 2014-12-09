@@ -1,3 +1,3 @@
 class Tip < ActiveRecord::Base
-  belongs_to :strategy_id
+  belongs_to :strategy
 end
