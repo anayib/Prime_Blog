@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @strategy.title %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @strategy.intro %>
+</p>
+
+<%= link_to 'Edit', edit_strategy_path(@strategy) %> |
+<%= link_to 'Back', strategies_path %>
