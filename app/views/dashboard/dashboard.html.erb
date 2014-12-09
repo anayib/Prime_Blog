@@ -1,3 +1,94 @@
-<h1>Dashboard#dashboard</h1>
-<p>Find me in app/views/dashboard/dashboard.html.erb</p>
-<h1>DashBoard generado para Content Manager</h1>
+<h1>Bienvenido al Dashboard para gestión de contenido</h1>
+
+<!--inicia authors -->
+<h1>Autores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>Url photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+        <td><%= author.bio %></td>
+        <td><%= author.url_photo %></td>
+        <td><%= link_to 'Show', author %></td>
+        <td><%= link_to 'Edit', edit_author_path(author) %></td>
+        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Author', new_author_path %>
+<!--termina authors authors -->
+
+<!--inicia strategy -->
+<h1>Estrategias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Intro</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @strategies.each do |strategy| %>
+      <tr>
+        <td><%= strategy.title %></td>
+        <td><%= strategy.intro %></td>
+        <td><%= link_to 'Show', strategy %></td>
+        <td><%= link_to 'Edit', edit_strategy_path(strategy) %></td>
+        <td><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Strategy', new_strategy_path %>
+
+<!--termina strategy -->
+<!--inicia tip -->
+<h1>Tips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Strategy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tips.each do |tip| %>
+      <tr>
+        <td><%= tip.title %></td>
+        <td><%= tip.strategy_id %></td>
+        <td><%= link_to 'Show', tip %></td>
+        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
+        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tip', new_tip_path %>
+
+<!--termina tip -->

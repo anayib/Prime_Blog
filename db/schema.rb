@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209205907) do
+ActiveRecord::Schema.define(version: 20141209215843) do
 
   create_table "authors", force: true do |t|
     t.text     "name"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20141209205907) do
 
   create_table "tips", force: true do |t|
     t.text     "title"
-    t.integer  "strategy_id_id"
+    t.integer  "strategy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tips", ["strategy_id_id"], name: "index_tips_on_strategy_id_id"
+  add_index "tips", ["strategy_id"], name: "index_tips_on_strategy_id"
 
 end

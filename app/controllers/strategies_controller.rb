@@ -15,6 +15,8 @@ class StrategiesController < ApplicationController
   # GET /strategies/new
   def new
     @strategy = Strategy.new
+    @authors = Author.all
+
   end
 
   # GET /strategies/1/edit
@@ -25,6 +27,15 @@ class StrategiesController < ApplicationController
   # POST /strategies.json
   def create
     @strategy = Strategy.new(strategy_params)
+
+    authors = params[:author_ids] 
+    # [1, 3, 5, 6], me trae el 
+    # array del <%= collection_check_boxes(:strategy, :author_ids, Author.all, :id, :name)
+    #que está en el _from.html.erb the strategy 
+    authors.each do |id|
+    @strategy.authors << Author.find(id)
+    end
+
 
     respond_to do |format|
       if @strategy.save

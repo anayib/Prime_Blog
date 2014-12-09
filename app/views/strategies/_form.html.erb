@@ -19,6 +19,11 @@
     <%= f.label :intro %><br>
     <%= f.text_area :intro %>
   </div>
+
+  <div>
+   <%= collection_check_boxes(:strategy, :author_ids, Author.all, :id, :name)  %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'welcome/index' 
 
-  get 'dashboard/dashboard'
+  get 'dashboard/dashboard' 
 
   root 'welcome#index'
 

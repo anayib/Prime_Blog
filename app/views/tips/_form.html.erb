@@ -16,10 +16,12 @@
     <%= f.text_area :title %>
   </div>
   <div class="field">
-    <%= f.label :strategy_id_id %><br>
-    <%= f.text_field :strategy_id_id %>
+    <%= f.label :strategy_id %><br>
+    <%= f.collection_select :strategy_id, Strategy.all, :id, :title, prompt:"seleccione la estrategia a la que pertenece el tip" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
